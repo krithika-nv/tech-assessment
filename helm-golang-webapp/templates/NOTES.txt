@@ -1,0 +1,17 @@
+----------------------------------------Notes start-------------------------------------
+
+1. Get the application URL by running these commands for Linux machines:
+export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ .Release.Name }})
+export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+echo https://$NODE_IP:$NODE_PORT
+
+2. Get the application URL by running these commands for macOS:
+kubectl port-forward service/helm-golang-webapp {.spec.ports[0].nodePort}:{.spec.ports[0].containerPort} {.spec.ports[1].nodePort}:{"{.spec.ports[1].containerPort}
+App: https://localhost:{.spec.ports[0].nodePort}
+Prometheus metrics: https://localhost:{.spec.ports[1].nodePort}/metrics
+or
+minikube service {{ .Release.Name }} --url
+
+Note: Ensure to hit the URLs with https. Test pod helm-golang-webapp-test-connection terminates on hook-succeeded.
+
+----------------------------------------Notes end---------------------------------------

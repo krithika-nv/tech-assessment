@@ -1,0 +1,15 @@
+# Default values for helm-golang-webapp.
+
+replicaCount: 1
+
+image:
+  repository: krithikan/golang-sorting-webapp
+  pullPolicy: Always
+  tag: "v1"
+
+containerPortApp: 8080 
+hostPortApp: 30200 #For nodePort
+containerPortPrometheus: 9110
+hostPortPrometheus: 30201 #For nodePort
+
+appName: helm-golang-webapp #For labels and selectors

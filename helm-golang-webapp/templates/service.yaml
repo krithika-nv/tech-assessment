@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  type: NodePort
+  ports:
+    - port: {{ .Values.containerPortApp }}
+      nodePort: {{ .Values.hostPortApp }}
+      targetPort: {{ .Values.containerPortApp }}
+      name: app
+    - port: {{ .Values.containerPortPrometheus }}
+      nodePort: {{ .Values.hostPortPrometheus }}
+      targetPort: {{ .Values.containerPortPrometheus }}
+      name: prometheus
+  selector:
+    app: {{ .Values.appName }}
