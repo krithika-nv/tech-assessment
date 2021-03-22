@@ -10,8 +10,8 @@ kubectl port-forward service/helm-golang-webapp {.spec.ports[0].nodePort}:{.spec
 App: https://localhost:{.spec.ports[0].nodePort}
 Prometheus metrics: https://localhost:{.spec.ports[1].nodePort}/metrics
 or
-minikube service {{ .Release.Name }} --url
+minikube service {{ .Release.Name }} --url => Outputs 2 URLs (app and prometheus)
 
-Note: Ensure to hit the URLs with https. Test pod helm-golang-webapp-test-connection terminates on hook-succeeded.
+Note: Ensure to hit the URLs with https. Also, append /metrics to Prometheus metrics endpoint URL. Test pod helm-golang-webapp-test-connection terminates on hook-succeeded.
 
 ----------------------------------------Notes end---------------------------------------
