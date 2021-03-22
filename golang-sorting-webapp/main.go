@@ -41,11 +41,11 @@ func increment(res http.ResponseWriter, req *http.Request) {
         http.NotFound(res, req)
         return
     	}
-	if !strings.Contains(req.URL.String(),"favicon.ico") { //Check to avoid counting /favicon.ico request
+	if !strings.Contains(req.URL.String(),"favicon.ico") { 
 	fmt.Fprintf(res, "%s", "<table border=\"1\">")
 	fmt.Fprintf(res, "%s", "<th>Header Field</th>")
 	fmt.Fprintf(res, "%s", "<th>Header Value</th>")
-	
+    //sorting	
     hmap := map[string]string{}
     var h_key []string
     for k, v := range req.Header {
@@ -64,7 +64,7 @@ func increment(res http.ResponseWriter, req *http.Request) {
     }
 
     fmt.Fprintf(res, "%s", "</table>")
-    number_of_requests.Inc()
+    number_of_requests.Inc() //Prometheus metric
 	}
 }
 
