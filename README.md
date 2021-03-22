@@ -36,13 +36,13 @@ golang-sorting-webapp is a dockerized Golang web application deployable on Kuber
 	1. The connection to this site is encrypted and authenticated using TLS 1.3, X25519, and AES_128_GCM.
 	1. All resources on this page are served securely.
 	1. This site is missing a valid, trusted certificate (net::ERR_CERT_AUTHORITY_INVALID). This is because it is self-signed. 
-1. Chrome's lighthouse testing
+1. Chrome's lighthouse testing.
 
 ### Scope for improvement:
-1. Integration with Fluentd and Elasticsearch for better logging
-1. Integration with Postgres majorly for data collection from Prometheus
-1. Include loadbalancing
-1. More efficient test suites
+1. Integration with Fluentd and Elasticsearch for better logging.
+1. Integration with Postgres majorly for data collection from Prometheus.
+1. Include loadbalancing.
+1. More efficient test suites.
 1. Better ways to store and access secrets.
-1. Follow best practices for app security
-1. CI/CD pipeline using GitHub Actions
+1. Follow best practices for storing secrets and certificates.
+1. CI/CD pipeline for this build, using GitHub Actions.
