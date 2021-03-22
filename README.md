@@ -19,10 +19,10 @@ golang-sorting-webapp is a dockerized Golang web application deployable on Kuber
 	1. Helm test suite  
 	1. Helm install notes
 1. Name of the expected Prometheus metric is _number_of_requests_.
-1. This is a https app
+1. This is a https webapp.
 1. Helm install notes has more info about accessing the app and prometheus endpoints.
 1. This prototype was tested on macOS only.
-1. No user/service accounts is available to maintain simplicity.
+1. To maintain simplicity, no user/service accounts are available. 
 
 ### Basic Tests:
 1. Basic Helm Hook test and Helm Linting.
